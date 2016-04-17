@@ -33,6 +33,13 @@ body {
         $i: index($colors-list, $current-color);
         &:nth-child(#{$i}) {
             background: $current-color;
+            &:hover {
+                .toggle-btn {
+                    &:hover {
+                        color: $current-color;
+                    }
+                }
+            }
         }
     }
     &:before {
@@ -43,7 +50,7 @@ body {
         width: 100%;
         height: 100%;
         content: '';
-        transition: all .6s cubic-bezier(.23, 1, .32, 1);
+        transition: all .4s ease-out;
         transform: skew(-30deg) scale(1) translate(0, 0);
         opacity: .05;
         background: white;
@@ -52,6 +59,12 @@ body {
         flex-basis: 20em;
         &:before {
             transform: skew(-30deg) scale(3) translate(0, 0);
+        }
+        .toggle-btn {
+            opacity: 1;
+            &:hover {
+                background: #FFF;
+            }
         }
     }
     &.active {
@@ -70,7 +83,7 @@ body {
         margin: 0;
         padding: 0;
         list-style: none;
-        transition: opacity 500ms ease-in-out;
+        transition: opacity .5s ease-in-out;
         transform: translate(-50%, 50%) scale(.5);
         opacity: 0;
     }
@@ -79,5 +92,10 @@ body {
         z-index: 2;
         display: block;
         cursor: pointer;
+        transition: opacity .5s ease-in-out, color .2s ease, background .2s ease;
+        opacity: 0;
+        border: 1px solid #FFF;
+        padding: 8px 25px;
+        font-size: .8rem;
     }
 }
