@@ -92,6 +92,23 @@ body {
             opacity: 1;
         }
     }
+    &:nth-child(even) {
+        &:before {
+            transform: skew(-45deg) scale(1) translate(0, 0);
+        }
+        &:hover {
+            &:before {
+                transform: skew(-45deg) scale(1) translate(0, 0);
+            }
+        }
+        &.active {
+            &:hover {
+                &:before {
+                    transform: skew(-45deg) scale(1) translate(0, 0);
+                }
+            }
+        }
+    }
     .close-btn {
         visibility: hidden;
         opacity: 0;
@@ -101,6 +118,7 @@ body {
         font-size: 2rem;
         transition: opacity .4s ease-in-out;
         cursor: pointer;
+        z-index: 1;
     }
     .title {
         font-size: 2rem;

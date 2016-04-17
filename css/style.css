@@ -269,6 +269,12 @@ body {
       transition-delay: 0;
       transform: translate(-50%, -50%) scale(1);
       opacity: 1; }
+  .color:nth-child(even):before {
+    transform: skew(-45deg) scale(1) translate(0, 0); }
+  .color:nth-child(even):hover:before {
+    transform: skew(-45deg) scale(1) translate(0, 0); }
+  .color:nth-child(even).active:hover:before {
+    transform: skew(-45deg) scale(1) translate(0, 0); }
   .color .close-btn {
     visibility: hidden;
     opacity: 0;
@@ -277,7 +283,8 @@ body {
     top: 20px;
     font-size: 2rem;
     transition: opacity .4s ease-in-out;
-    cursor: pointer; }
+    cursor: pointer;
+    z-index: 1; }
   .color .title {
     font-size: 2rem;
     font-weight: 600;
